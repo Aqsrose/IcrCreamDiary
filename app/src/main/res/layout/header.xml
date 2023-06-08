@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="250dp"
+    android:layout_gravity="center_horizontal"
+    android:background="#F5A298"
+    android:orientation="vertical"
+    android:id="@+id/header">
+
+    <ImageView
+        android:id="@+id/imageLogo"
+        android:layout_width="221dp"
+        android:layout_height="144dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/tvDiary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:fontFamily="sans-serif"
+        android:text="Diary"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:fontFamily="monospace"
+        android:text="its never to cold for ice-cream"
+        android:textSize="14sp" />
+
+</LinearLayout>
