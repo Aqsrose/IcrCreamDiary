@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "964823723697",
+    "project_id": "ice-cream-diary",
+    "storage_bucket": "ice-cream-diary.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:964823723697:android:99fbe64229b259920a3c90",
+        "android_client_info": {
+          "package_name": "com.example.icrcreamdiary"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "964823723697-aufg8tm5o5abroplofgb8d07rcuuavqs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdwjRrPcKsiFEEFLNt7K1pmOe2rFFSxFY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "964823723697-aufg8tm5o5abroplofgb8d07rcuuavqs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

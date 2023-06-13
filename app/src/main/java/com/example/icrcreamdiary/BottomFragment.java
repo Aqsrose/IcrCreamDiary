@@ -20,11 +20,12 @@ public class BottomFragment extends Fragment {
   private Button btnAdd;
   private EditText addtitle;
   private EditText addContent;
+  View view;
 
   @Nullable
   @Override
   public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-    View view = inflater.inflate(R.layout.fragment_bottom, container, false);
+     view = inflater.inflate(R.layout.fragment_bottom, container, false);
 
     // Find the button, EditTexts by ID
     btnAdd = view.findViewById(R.id.btnAdd);
@@ -40,7 +41,7 @@ public class BottomFragment extends Fragment {
           Toast.makeText(getActivity(), "Please enter all fields!", Toast.LENGTH_SHORT).show();
         } else {
           // Assuming you have a static `content` list in your ApplicationClass
-          ApplicationClass.content.add(new IceCreamList(addtitle.getText().toString().trim(), addContent.getText().toString().trim()));
+          ApplicationClass.content.add(new IceCreamList(addtitle.getText().toString().trim(), addContent.getText().toString().trim(), "icrecream"));
           Toast.makeText(getActivity(), "Ice cream recipe successfully added", Toast.LENGTH_SHORT).show();
           addtitle.setText("");
           addContent.setText("");

@@ -5,6 +5,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 
@@ -22,6 +23,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -31,7 +33,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements  NavigationView.OnNavigationItemSelectedListener {
 
-
+ImageView homebtn,addbtn,tipbtn;
     //for bottomFragment
 
      EditText addtitle, addContent;
@@ -62,9 +64,36 @@ public class MainActivity extends AppCompatActivity implements  NavigationView.O
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
-        fragmentManager=this.getSupportFragmentManager();
-        middleFragment=(MiddleFragment) fragmentManager.findFragmentById(R.id.middleFragment);
-        bottomFragment=(BottomFragment) fragmentManager.findFragmentById(R.id.bottomFragment);
+        homebtn=findViewById(R.id.homebtn);
+        addbtn=findViewById(R.id.addbtn);
+        tipbtn=findViewById(R.id.tipbtn);
+
+        replaceFragment(new MiddleFragment());
+        homebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+             replaceFragment(new MiddleFragment());
+            }
+        });
+        addbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                replaceFragment(new BottomFragment());
+
+            }
+        });
+        tipbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                replaceFragment(new TipFragment());
+
+
+            }
+        });
+
+//        fragmentManager=this.getSupportFragmentManager();
+//        middleFragment=(MiddleFragment) fragmentManager.findFragmentById(R.id.middleFragment);
+//        bottomFragment=(BottomFragment) fragmentManager.findFragmentById(R.id.bottomFragment);
 
         //toolbar,navigationBar and drawer
         toolbar = findViewById(R.id.toolbar);
@@ -140,6 +169,13 @@ public class MainActivity extends AppCompatActivity implements  NavigationView.O
 //        });
 
 
+    }
+
+    private void replaceFragment(Fragment fragment) {
+        FragmentManager fragmentManager= getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.frameLayout,fragment);
+        fragmentTransaction.commit();
     }
 
     public void onBackPressed() {

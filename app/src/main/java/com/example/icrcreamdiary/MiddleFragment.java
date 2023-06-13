@@ -20,7 +20,7 @@ public class MiddleFragment extends Fragment implements IceCreamAdapter.ItemClic
     RecyclerView.LayoutManager layoutManager;
     TextView tvTitle, tvContent;
 
-
+View view;
     public MiddleFragment() {
 
     }
@@ -29,7 +29,8 @@ public class MiddleFragment extends Fragment implements IceCreamAdapter.ItemClic
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_middle, container, false);
+        view= inflater.inflate(R.layout.fragment_middle, container, false);
+        return  view;
     }
 
     @Override

@@ -10,6 +10,7 @@
     tools:context=".MainActivity"
     tools:openDrawer="start">
 
+
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navView"
         android:layout_width="wrap_content"
@@ -19,34 +20,82 @@
         app:menu="@menu/main_menu" />
 
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
+        <FrameLayout
+            android:id="@+id/frameLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <include
-                android:id="@+id/toolbar"
-                layout="@layout/toolbar" />
+            android:layout_height="wrap_content" />
 
-            <androidx.fragment.app.FragmentContainerView
-                android:id="@+id/middleFragment"
-                android:name="com.example.icrcreamdiary.MiddleFragment"
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:layout="@layout/fragment_middle" />
+                android:orientation="vertical">
 
-            <androidx.fragment.app.FragmentContainerView
-                android:id="@+id/bottomFragment"
-                android:name="com.example.icrcreamdiary.BottomFragment"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:layout="@layout/fragment_bottom" />
+                <!--            <androidx.fragment.app.FragmentContainerView-->
+                <!--                android:id="@+id/middleFragment"-->
+                <!--                android:name="com.example.icrcreamdiary.MiddleFragment"-->
+                <!--                android:layout_width="match_parent"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                tools:layout="@layout/fragment_middle" />-->
+
+                <!--            <androidx.fragment.app.FragmentContainerView-->
+                <!--                android:id="@+id/bottomFragment"-->
+                <!--                android:name="com.example.icrcreamdiary.BottomFragment"-->
+                <!--                android:layout_width="match_parent"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                tools:layout="@layout/fragment_bottom" />-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/homebtn"
+                        android:layout_width="131dp"
+                        android:layout_height="62dp"
+                        android:layout_marginTop="250dp"
+                        android:background="#F6F5F5"
+                        android:clickable="true"
+                        android:contextClickable="false"
+                        android:src="@drawable/home" />
+
+                    <ImageView
+                        android:id="@+id/addbtn"
+                        android:layout_width="124dp"
+                        android:layout_height="63dp"
+                        android:layout_marginTop="250dp"
+                        android:background="#F6F5F5"
+                        android:clickable="true"
+                        android:contextClickable="false"
+                        android:src="@drawable/add" />
+
+                    <ImageView
+                        android:id="@+id/tipbtn"
+                        android:layout_width="154dp"
+                        android:layout_height="63dp"
+                        android:layout_marginTop="250dp"
+                        android:background="#F6F5F5"
+                        android:clickable="true"
+                        android:contextClickable="false"
+                        android:src="@drawable/tipsimage" />
+                </LinearLayout>
 
 
-        </LinearLayout>
+            </LinearLayout>
 
-    </ScrollView>
+
+        </ScrollView>
+    </LinearLayout>
 </androidx.drawerlayout.widget.DrawerLayout>
